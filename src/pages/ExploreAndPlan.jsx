@@ -1,6 +1,6 @@
 import "../App.css";
 import { useState } from "react";
-import { RightArrowIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export default function ExploreAndPlan() {
   const [output, setOutput] = useState(null);
@@ -42,7 +42,7 @@ export default function ExploreAndPlan() {
   return (
     <div className="w-full h-full flex items-center flex-col">
       <a className="w-full flex gap-2" href="/">
-        <RightArrowIcon className="h-7" /> <span>Back to home</span>
+        <ArrowRightIcon className="h-7" /> <span>Back to home</span>
       </a>
       <h1 className="font-bold text-3xl text-blue-500">Explore and Plan</h1>
 

@@ -1,13 +1,13 @@
 import "../App.css";
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
-import { RightArrowIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export default function FinancialAid() {
   return (
     <div className="w-full h-full">
       <a className="w-full flex gap-2" href="/">
-        <RightArrowIcon className="h-7" /> <span>Back to home</span>
+        <ArrowRightIcon className="h-7" /> <span>Back to home</span>
       </a>
       <div className="flex gap-3">
         
@@ -15,7 +15,7 @@ export default function FinancialAid() {
         {/* <span className="w-full h-5 bg-blue-500"></span> */}
       </div>
       <a className="w-full flex gap-2" href="/">
-        <RightArrowIcon className="h-7" /> <span>Back to home</span>
+        <ArrowRightIcon className="h-7" /> <span>Back to home</span>
       </a>
       <div className="w-full grid gap-3 grid-cols-3">
         <Card title="Estimate Financial Aid" description="Estimate federal financial aid from FAFSA" link="https://studentaid.gov/aid-estimator/" />

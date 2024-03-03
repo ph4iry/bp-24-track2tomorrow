@@ -5,15 +5,16 @@ import { useState } from "react";
 export default function Home() {
   const name = localStorage.getItem("name");
 
-  
   return (
     <div className="w-full h-full">
-      <h1 className="font-bold text-3xl text-blue-500 mb-3">Hey, {name}, welcome!</h1>
-      <div className="flex gap-4 w-full min-h-[400px] max-h=[60vh]">
+      <h1 className="font-bold text-3xl text-blue-500 mb-3">
+        Hey, {name}, welcome!
+      </h1>
+      <div className="flex gap-4 w-full min-h-[400px] max-h=[60vh] justify-center">
         <div className="basis-2/3 w-2/3 bg-slate-200 rounded-lg p-8">
           <Roadmap />
         </div>
-        <div className="basis-1/3 w-1/3 bg-slate-200 rounded-lg"></div>
+        {/* <div className="basis-1/3 w-1/3 bg-slate-200 rounded-lg"></div> */}
       </div>
     </div>
   );
@@ -46,7 +47,11 @@ function Roadmap() {
         />
       </div>
       <div className="col-span-1">
-        <RoadmapAction isCurrent={false} name="Internships" />
+        <RoadmapAction
+          isCurrent={false}
+          name="Internships"
+          link="/extracurriculars"
+        />
       </div>
       <div className="col-span-2 pt-10">
         <div className="w-full h-full border-t-[7px] border-r-[7px] border-black border-dashed rounded-tr-xl"></div>
@@ -66,9 +71,7 @@ function Roadmap() {
   );
 }
 
-const backgroundColors = () => {
-  
-}
+const backgroundColors = () => {};
 
 function RoadmapAction({ isCurrent, name, img, dialogContent, link }) {
   let [isOpen, setIsOpen] = useState(false);
@@ -86,7 +89,7 @@ function RoadmapAction({ isCurrent, name, img, dialogContent, link }) {
           className="text-sm text-blue-500 underline"
           onClick={() => {
             // if theres a dialog to open, open that otherwise open the link attached
-            if(dialogContent) {
+            if (dialogContent) {
               setIsOpen(true);
               return;
             } else if (link) {
@@ -102,31 +105,31 @@ function RoadmapAction({ isCurrent, name, img, dialogContent, link }) {
       )}
 
       {!link && (
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-24 bg-black/25 backdrop-blur-sm">
-          <Dialog.Panel className="w-full max-w-[48rem] rounded-lg bg-white p-6">
-            <div className="flex items-center">
-              <div className="self-stretch w-2/3">
-                <div className="text-3xl font-bold whitespace-nowrap w-max">
-                  {name}
+        <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+          <div className="fixed inset-0 flex w-screen items-center justify-center p-24 bg-black/25 backdrop-blur-sm">
+            <Dialog.Panel className="w-full max-w-[48rem] rounded-lg bg-white p-6">
+              <div className="flex items-center">
+                <div className="self-stretch w-2/3">
+                  <div className="text-3xl font-bold whitespace-nowrap w-max">
+                    {name}
+                  </div>
+                  {dialogContent}
                 </div>
-                {dialogContent}
+                {img && (
+                  <div className="w-1/3">
+                    <img className="w-full h-auto" src={img} />
+                  </div>
+                )}
               </div>
-              {img && (
-                <div className="w-1/3">
-                  <img className="w-full h-auto" src={img} />
-                </div>
-              )}
-            </div>
-            <button
-              className="bg-blue-200 w-full rounded p-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Close
-            </button>
-          </Dialog.Panel>
-        </div>
-      </Dialog>
+              <button
+                className="bg-blue-200 w-full rounded p-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Close
+              </button>
+            </Dialog.Panel>
+          </div>
+        </Dialog>
       )}
     </div>
   );

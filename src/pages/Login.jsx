@@ -15,14 +15,14 @@ export default function Login() {
         <input type="text" id="user" name="user"></input>
         <label for="pass">Password:</label>
         <input type="text" id="pass" name="pass"></input>
-        <button id="continue" className="p-2 bg-blue-400 rounded-lg mt-4"
+        <button
+          id="continue"
+          className="p-2 bg-blue-400 rounded-lg mt-4"
           onClick={() => {
             setName();
             window.location.href = "/";
-          
-          }}>
-          
-        </button>
+          }}
+        ></button>
       </div>
     </div>
   );
