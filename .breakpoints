@@ -1,0 +1,20 @@
+{
+  "files": {
+    "src/pages/Layout.jsx": [
+      {
+        "id": "ff201d7c-f864-4a97-b7ae-c8fbcae0cf32",
+        "line": 1,
+        "version": 296,
+        "index": 0
+      }
+    ],
+    "tailwind.config.js": [
+      {
+        "id": "ceaa3788-c8d1-4967-ad37-3b9d5d480195",
+        "line": 7,
+        "version": 16,
+        "index": 132
+      }
+    ]
+  }
+}
